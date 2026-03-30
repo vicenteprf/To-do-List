@@ -1,73 +1,85 @@
-# React + TypeScript + Vite
+# 📝 To Do List
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação de lista de tarefas desenvolvida com React e TypeScript, com foco em componentização, gerenciamento de estado e persistência de dados.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✅ Funcionalidades
 
-## React Compiler
+- Adicionar novas tarefas
+- Remover tarefas
+- Editar tarefas existentes
+- Marcar tarefas como concluídas
+- Filtrar tarefas por: todas, pendentes e concluídas
+- Persistência de dados com localStorage (as tarefas são salvas mesmo ao fechar o navegador)
+- Validação para impedir adição de tarefas vazias
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🚀 Tecnologias
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- CSS puro
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🧠 Conceitos praticados
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- `useState` com arrays de objetos tipados
+- `useEffect` com dependências
+- `useRef` para foco automático no input
+- Props simples e props de função entre componentes
+- Componentização (`App` + `TaskItem`)
+- Métodos de array: `.map()`, `.filter()`, `.findIndex()`
+- Spread operator para atualizações imutáveis
+- Lazy initialization no `useState` para carregar o localStorage
+- Union types no TypeScript
+
+---
+
+## ⚙️ Como rodar o projeto
+
+### Pré-requisitos
+
+- [Node.js](https://nodejs.org/) instalado
+- [Git](https://git-scm.com/) instalado
+
+### Passos
+
+```bash
+# Clone o repositório
+git clone https://github.com/seu-usuario/todo-list.git
+
+# Entre na pasta do projeto
+cd todo-list
+
+# Instale as dependências
+npm install
+
+# Rode o projeto
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Acesse [http://localhost:5173](http://localhost:5173/) no seu navegador.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📁 Estrutura de arquivos
+
 ```
+src/
+├── App.tsx
+├── App.css
+└── components/
+    ├── TaskItem.tsx
+    └── TaskItem.css
+```
+
+---
+
+## 👨‍💻 Autor
+
+Feito por **Vicente Ramos**
+[LinkedIn](https://linkedin.com/in/seu-perfil) - https://www.linkedin.com/in/vicente-ramos9/
+[GitHub](https://github.com/seu-usuario) - https://github.com/vicenteprf
